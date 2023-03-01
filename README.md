@@ -171,22 +171,3 @@ hotel.service:
 or
         mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=mysql"
 ```
-
-# Attaching to the app remotely from your IDE
-
-Run the service with these command line options:
-
-```
-mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
-or
-java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dspring.profiles.active=test -Ddebug -jar target/spring-boot-rest-example-0.5.0.war
-```
-and then you can connect to it remotely using your IDE. For example, from IntelliJ You have to add remote debug configuration: Edit configuration -> Remote.
-
-# Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=khoubyari/spring-boot-rest-example&type=Date)](https://star-history.com/#khoubyari/spring-boot-rest-example&Date)
-
-# Questions and Comments: khoubyari@gmail.com
-
-

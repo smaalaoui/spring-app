@@ -15,19 +15,6 @@ pipeline {
             }
         }
 
-
-        /*stage('Clean Directory') {
-            steps {
-                sh 'rm -rf *'
-            }
-        }
-
-        stage('Pull Code from GitHub') {
-            steps {
-                git 'https://github.com/user/repo.git'
-            }
-        }
-
         stage('Run Unit Tests') {
             steps {
                 sh 'mvn test'
@@ -40,7 +27,7 @@ pipeline {
             }
         }
 
-        stage('Deploy Artifact to AWS EC2') {
+        /*stage('Deploy Artifact to AWS EC2') {
             steps {
             // Set up SSH agent with private key
             sshagent(['my-ssh-key']) {

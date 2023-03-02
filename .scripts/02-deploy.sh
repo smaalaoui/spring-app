@@ -5,4 +5,4 @@ mv /home/ubuntu/app.war /home/ubuntu/app/app.war
 
 sudo systemctl start app.service
 
-sleep 20
+sleep 30

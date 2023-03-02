@@ -56,11 +56,19 @@ pipeline {
             }
         }
 
+        stage('Set Environment Variables') {
+            steps {
+                withEnv(['HOST_IP=${params.HOST_IP}', 'DELETE_ID=${params.DELETE_ID}']) {
+                    sh 'echo "HOST_IP=$HOST_IP"'
+                    sh 'echo "DELETE_ID=$DELETE_ID"'
+                }
+            }
+
 
         stage('Run API Tests') {
             steps {
                 sh '''
-                newman run Test_API_Collection.postman_collection.json --env-var "HOST_URL=http://${params.HOST_IP}:8090" --env-var "DELETE_ID=${params.DELETE_ID}"
+                newman run Test_API_Collection.postman_collection.json --env-var "HOST_URL=http://${HOST_IP}:8090" --env-var "DELETE_ID=${DELETE_ID}"
                 '''
             }
         }

@@ -28,6 +28,8 @@ public class Hotel {
     @Column()
     private int rating;
 
+    private String debug = "DEBUG";
+
     public Hotel() {
     }
 
@@ -76,6 +78,14 @@ public class Hotel {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getDebug() {
+        return debug;
+    }
+
+    public void setDebug(String debug) {
+        this.debug = debug;
     }
 
     @Override

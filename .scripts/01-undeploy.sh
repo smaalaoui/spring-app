@@ -8,5 +8,5 @@ if [ -n "$process" ]; then
 fi
 
 if test -f "/home/ubuntu/app/app.war"; then
-    rm -rm /home/ubuntu/app
+    rm -rf /home/ubuntu/app
 fi

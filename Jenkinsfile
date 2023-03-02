@@ -1,6 +1,11 @@
 pipeline {
     agent { label "master" }
 
+    tools {
+        maven "maven-3.6.0"
+        jdk "jdk-8"
+    }
+
     stages {
 
         stage("Clean") {

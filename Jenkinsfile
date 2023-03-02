@@ -1,4 +1,4 @@
-def HOST_IP = "3.249.142.206"
+def HOST_IP = "34.243.136.237"
 
 pipeline {
     agent { label "master" }

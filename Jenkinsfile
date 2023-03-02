@@ -1,8 +1,22 @@
 pipeline {
-    agent any
+    agent { label "jenkins-slave" }
 
     stages {
-        stage('Clean Directory') {
+
+        stage("Clean") {
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage('Clone') {
+            steps {
+                checkout scm
+            }
+        }
+
+
+        /*stage('Clean Directory') {
             steps {
                 sh 'rm -rf *'
             }
@@ -44,7 +58,7 @@ pipeline {
                 # Start the new application
                 sudo systemctl start my-application.service
             '''
-        }
+
     }
 }
 
@@ -54,5 +68,6 @@ pipeline {
                 sh 'newman run mycollection.json --env-var "baseURL=https://example.com" --env-var "apiKey=12345"'
             }
         }
+    }  }*/
     }
 }

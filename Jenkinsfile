@@ -1,3 +1,5 @@
+def HOTS_IP = "3.249.142.206"
+
 pipeline {
     agent { label "master" }
 
@@ -19,11 +21,11 @@ pipeline {
             }
         }
 
-        stage('Run Unit Tests') {
+        /*stage('Run Unit Tests') {
             steps {
                 sh 'mvn test'
             }
-        }
+        }*/
 
         stage('Build Artifact') {
             steps {

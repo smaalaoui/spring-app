@@ -63,7 +63,7 @@ pipeline {
                     sh 'echo "DELETE_ID=$DELETE_ID"'
                 }
             }
-
+        }
 
         stage('Run API Tests') {
             steps {

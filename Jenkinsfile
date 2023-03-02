@@ -5,6 +5,7 @@ pipeline {
 
     tools {
         maven "maven-3.6.0"
+        nodejs "NodeJSinstallerNewman"
     }
 
     parameters {
@@ -59,7 +60,7 @@ pipeline {
         stage('Run API Tests') {
             steps {
                 sh '''
-                /home/ec2-user/.nvm/versions/node/v16.19.1/bin/newman run Test_API_Collection.postman_collection.json --env-var 'HOST_URL=http://${params.HOST_ID}:8090' --env-var 'DELETE_ID=${params.DELETE_ID}'
+                newman run Test_API_Collection.postman_collection.json --env-var 'HOST_URL=http://${params.HOST_ID}:8090' --env-var 'DELETE_ID=${params.DELETE_ID}'
                 '''
             }
         }

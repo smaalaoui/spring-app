@@ -38,7 +38,7 @@ pipeline {
             }
         }
 
-        stage('Deploy & Run APP') {
+        stage('Deploy & Run App') {
             steps {
                 script {
                     sshagent(credentials: ['my-key-pair']) {
@@ -56,10 +56,10 @@ pipeline {
         }
 
 
-        stage('Run Newman Collection') {
+        stage('Run API Tests') {
             steps {
                 sh '''
-                newman run Test_API_Collection.postman_collection.json --env-var 'HOST_URL=http://${params.HOST_IP}:8090' --env-var 'DELETE_ID=${params.DELETE_ID}'
+                newman run Test_API_Collection.postman_collection.json --env-var 'HOST_URL=http://54.154.198.55:8090' --env-var 'DELETE_ID=2'
                 '''
             }
         }

@@ -59,7 +59,7 @@ pipeline {
         stage('Run API Tests') {
             steps {
                 sh '''
-                newman run Test_API_Collection.postman_collection.json --env-var 'HOST_URL=http://54.154.198.55:8090' --env-var 'DELETE_ID=2'
+                newman run Test_API_Collection.postman_collection.json --env-var 'HOST_URL=http://${params.HOST_ID}:8090' --env-var 'DELETE_ID=${params.DELETE_ID}'
                 '''
             }
         }
